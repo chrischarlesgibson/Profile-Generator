@@ -1,6 +1,9 @@
 const inquirer = require("inquier");
 const fs = require("fs");
 const jest = require("jest");
+const renderEngineer = require("./classes/Engineer");
+const renderIntern = require("./classes/Intern");
+const renderManager = require("./classes/Manager");
 
 //question array to direct the user to the correct set of employee questions array
 const typeOfEmployeeQuestion = [

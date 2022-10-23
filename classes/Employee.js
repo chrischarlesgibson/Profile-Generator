@@ -3,17 +3,17 @@ function Employee(name, id, email) {
   this.id = id;
   this.email = email;
 }
-function getName() {
+Employee.prototype.getName = function () {
   return this.name;
-}
-function getId() {
+};
+Employee.prototype.getId = function () {
   return this.id;
-}
-function getEmail() {
+};
+Employee.prototype.getEmail = function () {
   return this.email;
-}
-function getRole() {
+};
+Employee.prototype.getRole = function () {
   return this.role;
-}
+};
 
 module.exports = Employee;
