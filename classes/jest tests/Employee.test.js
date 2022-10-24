@@ -1,4 +1,4 @@
-const Employee = require("./classes/Employee.js.js");
+const Employee = require("./classes/Employee.js.js.js");
 
 //test to check if the employee object contains the necessary info like id, name and email
 describe("Employee", function () {

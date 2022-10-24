@@ -1,4 +1,4 @@
-const Intern = require("./classes/Intern.js");
+const Intern = require("../Intern");
 
 //test to check if the intern object contains the necessary info like id, name and email
 describe("Intern", function () {

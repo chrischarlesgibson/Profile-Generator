@@ -1,4 +1,4 @@
-const Manager = require("./classes/Manager.js");
+const Manager = require("../Manager");
 
 //test to check if the intern object contains the necessary info like id, name and email
 describe("Manager", function () {
