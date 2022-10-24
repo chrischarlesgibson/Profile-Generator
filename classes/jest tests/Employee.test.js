@@ -14,7 +14,7 @@ describe("Employee", function () {
 describe("getID function test", function () {
   it("should retrieve the employee's ID from the data object", function () {
     const id = 4512;
-    const teamMember = new Employee(id);
+    const teamMember = new Employee("Tyler Durden", 4512, "tydurden@gmail.com");
     expect(teamMember.id).toEqual(4512);
   });
 });
@@ -23,7 +23,7 @@ describe("getID function test", function () {
 describe("getName function test", function () {
   it("should retrieve the employee's name from the data object", function () {
     const name = "Tyler Durden";
-    const teamMember = new Employee(name);
+    const teamMember = new Employee("Tyler Durden", 4512, "tydurden@gmail.com");
     expect(teamMember.name).toEqual("Tyler Durden");
   });
 });
@@ -32,7 +32,7 @@ describe("getName function test", function () {
 describe("getEmail function test", function () {
   it("should retrieve the employee's email from the data object", function () {
     const email = "tydurden@gmail.com";
-    const teamMember = new Employee(email);
+    const teamMember = new Employee("Tyler Durden", 4512, "tydurden@gmail.com");
     expect(teamMember.email).toEqual("tydurden@gmail.com");
   });
 });
