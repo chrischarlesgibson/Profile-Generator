@@ -1,3 +1,4 @@
+//declaring a constructor function called EMployeed and giving it 3 properties and also 4 methods. using prototype type syntax so that I can us .call when making the engineer, manager and intern classes
 function Employee(name, id, email) {
   this.name = name;
   this.id = id;
