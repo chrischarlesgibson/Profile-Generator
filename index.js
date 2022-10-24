@@ -1,12 +1,13 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const jest = require("jest");
-const renderEngineer = require("./classes/Engineer");
-const renderIntern = require("./classes/Intern");
-const renderManager = require("./classes/Manager");
+const Intern = require("./classes/Intern");
+const Engineer = require("./classes/Engineer");
+const Manager = require("./classes/Manager");
 
 //setting empty array to store all the added teammembers
 const teamMembersArray = [];
+
 //question array to direct the user to the correct set of employee questions array
 const typeOfEmployeeQuestion = [
   {
@@ -114,6 +115,7 @@ function useManagerQuestions() {
     teamMembersArray.push(addedManagerObject);
   });
 }
+
 //function to prompt user with questions realted to adding  a new intern and then storing the users input into the addinternsobject and push that new intern into the team members array
 function useInternQuestions() {
   inquirer.prompt(internQuestions).then(function (response) {
