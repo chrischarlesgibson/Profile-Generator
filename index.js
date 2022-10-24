@@ -13,7 +13,7 @@ const typeOfEmployeeQuestion = [
     type: "list",
     message: "Which type of team member do you want to add?",
     name: "teamMemberType",
-    choices: ["manager", "Egineer", "Intern"],
+    choices: ["Manager", "Engineer", "Intern"],
   },
 ];
 
@@ -89,7 +89,8 @@ const engineerQuestions = [
 
 //function to direct user to correct set of questions based on which class of employee they choose in the typeOfEmployeeQuestion array
 function questionDirectory() {
-  inquirer.prompt(firstQuestion).then(function (response) {
+  inquirer.prompt(typeOfEmployeeQuestion).then(function (response) {
+    console.log(response);
     let chosenRole = response.teamMemberType;
     if (chosenRole === "Engineer") {
       useEngineerQuestions();
