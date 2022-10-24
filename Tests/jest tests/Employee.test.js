@@ -1,4 +1,4 @@
-const Employee = require("./classes/Employee.js");
+const Employee = require("./classes/Employee.js.js");
 
 //test to check if the employee object contains the necessary info like id, name and email
 describe("Employee", function () {
@@ -6,7 +6,7 @@ describe("Employee", function () {
     const teamMember = new Employee("Tyler Durden", 4512, "tydurden@gmail.com");
     expect(teamMember.name).toEqual("Tyler Durden");
     expect(teamMember.id).toEqual(4512);
-    expect(teamMember.id).toEqual("tydurden@gmail.com");
+    expect(teamMember.gmail).toEqual("tydurden@gmail.com");
   });
 });
 

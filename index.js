@@ -87,32 +87,8 @@ const engineerQuestions = [
   },
 ];
 
-// // / TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-//   console.log(data);
-//   fs.writeFile(fileName, data, (err) =>
-//     err
-//       ? console.error(err)
-//       : console.log(
-//           "Success! Checkfor your README.md file in the folder that holds your index.js file "
-//         )
-//   );
-// }
-
-// // TODO: Create a function to initialize app
-// function init() {
-//   inquirer.prompt(questions).then((response) => {
-//     let storedUserInput = generateMarkdown(response);
-//     writeToFile("yourREADME.md", storedUserInput);
-//     console.log(response);
-//   });
-// }
-
-// // Function call to initialize app
-// init();
-
 function firstQuestion() {
-  inquirer.prompt(typeOfEmployeeQuestion).then((response) => {
+  inquirer.prompt(typeOfEmployeeQuestion).then(function (response) {
     const addedEngineerObject = new Engineer(
       response.name,
       response.id,
@@ -125,7 +101,7 @@ function firstQuestion() {
 
 //function to prompt user with questions realted to adding  a new manager and then storing the users input into the addmanagersobject and push that new manager into the team members array
 function useManagerQuestions() {
-  inquirer.prompt(managerQuestions).then((response) => {
+  inquirer.prompt(managerQuestions).then(function (response) {
     const addedManagerObject = new Manager(
       response.name,
       response.id,
@@ -137,7 +113,7 @@ function useManagerQuestions() {
 }
 //function to prompt user with questions realted to adding  a new intern and then storing the users input into the addinternsobject and push that new intern into the team members array
 function useInternQuestions() {
-  inquirer.prompt(internQuestions).then((response) => {
+  inquirer.prompt(internQuestions).then(function (response) {
     const addedInternObject = new Intern(
       response.name,
       response.id,
@@ -150,7 +126,7 @@ function useInternQuestions() {
 
 //function to prompt user with questions realted to adding  a new engineer and then storing the users input into the addengineerobject and push that new engineer into the team members array
 function useEgineerQuestions() {
-  inquirer.prompt(engineerQuestions).then((response) => {
+  inquirer.prompt(engineerQuestions).then(function (response) {
     const addedEngineerObject = new Engineer(
       response.name,
       response.id,
@@ -158,5 +134,19 @@ function useEgineerQuestions() {
       response.github
     );
     teamMembersArray.push(addedEngineerObject);
+  });
+}
+
+//function to direct user to correct set of questions based on which class of employee they choose in the typeOfEmployeeQuestion array
+function questionDirectory() {
+  inquirer.prompt(firstQuestion).then(function (response) {
+    let chosenRole = response.teamMemberType;
+    if (chosenRole === "Engineer") {
+      useEgineerQuestions();
+    } else if (chosenRole === "Manager") {
+      useManagerQuestions();
+    } else if (chosenRole === "Intern") {
+      useInternQuestions;
+    }
   });
 }
