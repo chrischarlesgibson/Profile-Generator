@@ -14,7 +14,12 @@ const typeOfEmployeeQuestion = [
     type: "list",
     message: "Which type of team member do you want to add?",
     name: "teamMemberType",
-    choices: ["Manager", "Engineer", "Intern"],
+    choices: [
+      "Manager",
+      "Engineer",
+      "Intern",
+      "I'm finished, create my team page",
+    ],
   },
 ];
 
@@ -99,6 +104,8 @@ function questionDirectory() {
       useManagerQuestions();
     } else if (chosenRole === "Intern") {
       useInternQuestions();
+    } else if (chosenRole === "I'm finished, create my team page") {
+      renderHtml();
     }
   });
 }
@@ -113,6 +120,8 @@ function useManagerQuestions() {
       response.office
     );
     teamMembersArray.push(addedManagerObject);
+    console.log(teamMembersArray);
+    questionDirectory();
   });
 }
 
@@ -126,6 +135,8 @@ function useInternQuestions() {
       response.school
     );
     teamMembersArray.push(addedInternObject);
+    console.log(teamMembersArray);
+    questionDirectory();
   });
 }
 
@@ -139,7 +150,24 @@ function useEngineerQuestions() {
       response.github
     );
     teamMembersArray.push(addedEngineerObject);
+    console.log(teamMembersArray);
+    questionDirectory();
   });
+}
+
+// ])
+// .then((answers) => {
+//   const htmlPageContent = generateHTML(answers);
+
+//   fs.writeFile('index.html', htmlPageContent, (err) =>
+//     err ? console.log(err) : console.log('Successfully created index.html!')
+//   );
+// });
+
+
+function renderHtml() {
+    const employeeCards=
+  for (i = 0; i < teamMembersArray.length; i++) {}
 }
 
 function init() {
