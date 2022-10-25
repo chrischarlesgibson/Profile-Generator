@@ -56,14 +56,14 @@ function generateHtml(allTeamCardsString) {
       <title>Document</title>
     </head>
     <body>
-      <div class="jumbotron jumbotron-fluid">
+      <div class="jumbotron jumbotron-fluid bg-danger text-white">
         <div class="container">
           <h1 class="display-4 d-flex justify-content-center">My Team</h1>
         </div>
       </div>
       <div class="container">
       <div class="row">
-        <div class="col-12 col-md-4">
+        <div class="d-flex flex-row flex-wrap justify-content-center">
         ${renderTeamPage(allTeamCardsString)}
 
     <script

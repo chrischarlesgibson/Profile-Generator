@@ -2,12 +2,12 @@
 
 function renderInternCard(Intern) {
   return ` 
-          <div class="card" style="width: 18rem">
-            <div class="card-header">
+          <div class="card" style="width: 18rem;margin: 25px; box-shadow: 7px 1px 13px 2px rgba(0, 0, 0, 0.58);">
+            <div class="card-header text-white bg-primary">
               <h1 class="d-flex justify-content-center"> ${Intern.name}</h1>
               <h5 class="d-flex justify-content-center">Intern</h5>
               
-              <span class="material-symbols-outlined d-flex justify-content-center"">school</span>
+              <span class="material-icons d-flex justify-content-center"">school</span>
             </div>
     
             <div class="card-body">
