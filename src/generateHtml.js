@@ -17,9 +17,10 @@ const renderManagerCard = require("../src/renderManager");
 // }
 
 const renderTeamPage = function (data) {
-  renderEngineerCard(Engineer);
-  renderInternCard(Intern);
-  renderManagerCard(Manager);
+  console.log(data);
+  renderEngineerCard(data);
+  renderInternCard(data);
+  renderManagerCard(data);
   const renderArray = [];
 
   renderArray.push(

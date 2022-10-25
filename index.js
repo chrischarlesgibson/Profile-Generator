@@ -5,6 +5,7 @@ const Intern = require("./classes/Intern");
 const Engineer = require("./classes/Engineer");
 const Manager = require("./classes/Manager");
 const generateHtml = require("./src/generateHtml");
+const Employee = require("./classes/Employee");
 const renderEngineer = require("./src/renderEngineer");
 const renderIntern = require("./src/renderIntern");
 const renderManager = require("./src/renderManager");
@@ -109,6 +110,7 @@ function questionDirectory() {
     } else if (chosenRole === "Intern") {
       useInternQuestions();
     } else if (chosenRole === "I'm finished, create my team page") {
+      console.log(teamMembersArray);
       generateHtml();
     }
   });
@@ -126,6 +128,7 @@ function useManagerQuestions() {
     teamMembersArray.push(addedManagerObject);
     console.log(teamMembersArray);
     questionDirectory();
+    console.log(teamMembersArray);
   });
 }
 
@@ -141,6 +144,7 @@ function useInternQuestions() {
     teamMembersArray.push(addedInternObject);
     console.log(teamMembersArray);
     questionDirectory();
+    console.log(teamMembersArray);
   });
 }
 
@@ -156,53 +160,27 @@ function useEngineerQuestions() {
     teamMembersArray.push(addedEngineerObject);
     console.log(teamMembersArray);
     questionDirectory();
+    console.log(teamMembersArray);
   });
 }
 
-// ])
-// .then((answers) => {
-//   const htmlPageContent = generateHTML(answers);
-
-//   fs.writeFile('index.html', htmlPageContent, (err) =>
-//     err ? console.log(err) : console.log('Successfully created index.html!')
-//   );
-// });
+function writeToFile(fileName, data) {
+  console.log(data);
+  fs.writeFile(fileName, data, (err) =>
+    err
+      ? console.error(err)
+      : console.log(
+          "It's a success! Your team's profile has been generated! check for teamPage.html in you files."
+        )
+  );
+}
 
 function init() {
   questionDirectory();
+
+  let storedUserInput = generateHtml(teamMembersArray);
+  writeToFile("teamPage.html", JSON.stringify(storedUserInput));
+  console.log(response);
 }
 
 init();
-
-// function writeToFile(fileName, data) {
-//   console.log(data);
-//   fs.writeFile(fileName, data, (err) =>
-//     err ? console.error(err) : console.log("Success!")
-//   );
-// }
-
-// // TODO: Create a function to initialize app
-// function init() {
-//   inquirer.prompt(questions).then((response) => {
-//     let storedUserInput = generateMarkdown(response);
-//     writeToFile("yourREADME.md", storedUserInput);
-//     console.log(response);
-//   });
-// }
-
-// // Function call to initialize app
-// init();
-
-// function to generate HTML page file using file system
-function writeFile(fileName, data) {
-  fs.writeFile("../", data, (err) => {
-    if (err) {
-      console.log(err);
-      return;
-    } else {
-      console.log(
-        "It's a success! Your team's profile has been generated! check for teampage.html in you files."
-      );
-    }
-  });
-}
