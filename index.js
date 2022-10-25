@@ -4,7 +4,10 @@ const jest = require("jest");
 const Intern = require("./classes/Intern");
 const Engineer = require("./classes/Engineer");
 const Manager = require("./classes/Manager");
-
+const generateHtml = require("./src/generateHtml");
+const renderEngineer = require("./src/renderEngineer");
+const renderIntern = require("./src/renderIntern");
+const renderManager = require("./src/renderManager");
 //setting empty array to store all the added teammembers
 const teamMembersArray = [];
 
@@ -105,7 +108,7 @@ function questionDirectory() {
     } else if (chosenRole === "Intern") {
       useInternQuestions();
     } else if (chosenRole === "I'm finished, create my team page") {
-      renderEmployeeCard();
+      generateHtml();
     }
   });
 }
@@ -121,7 +124,6 @@ function useManagerQuestions() {
     );
     teamMembersArray.push(addedManagerObject);
     console.log(teamMembersArray);
-    renderEmployeeCard();
     questionDirectory();
   });
 }
@@ -137,7 +139,6 @@ function useInternQuestions() {
     );
     teamMembersArray.push(addedInternObject);
     console.log(teamMembersArray);
-    renderEmployeeCard();
     questionDirectory();
   });
 }
@@ -153,7 +154,6 @@ function useEngineerQuestions() {
     );
     teamMembersArray.push(addedEngineerObject);
     console.log(teamMembersArray);
-    renderEmployeeCard();
     questionDirectory();
   });
 }
@@ -166,14 +166,6 @@ function useEngineerQuestions() {
 //     err ? console.log(err) : console.log('Successfully created index.html!')
 //   );
 // });
-
-// function renderEmployeeCard() {
-//   teamMembersArray.forEach((employees) => {
-//     for (let key in employees) {
-//       console.log(`${key}: ${employees[key]}`);
-//     }
-//   });
-// }
 
 function init() {
   questionDirectory();
