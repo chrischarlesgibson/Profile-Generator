@@ -5,7 +5,7 @@ function renderEngineerCard(Engineer) {
         <div class="card" style="width: 18rem">
           <div class="card-header">
             <h1 class="d-flex justify-content-center"> ${Engineer.name}</h1>
-            <h5 class="d-flex justify-content-center">${Engineer.role}</h5>
+            <h5 class="d-flex justify-content-center">Engineer</h5>
             <span class="material-symbols-outlined d-flex justify-content-center"
               >engineering</span
             >

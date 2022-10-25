@@ -3,7 +3,7 @@ function renderManagerCard(Manager) {
                 <div class="card" style="width: 18rem">
                   <div class="card-header">
                     <h1 class="d-flex justify-content-center"> ${Manager.name}</h1>
-                    <h5 class="d-flex justify-content-center">${Manager.role}</h5>
+                    <h5 class="d-flex justify-content-center">Manager</h5>
                     <span class="<span class="material-symbols-outlined">
                     coffee
                     </span class= "d-flex justify-content-center"
