@@ -5,10 +5,9 @@ class Manager extends Employee {
   constructor(name, id, email, office) {
     super(name, id, email);
     this.office = office;
-    const role = "Manager";
   }
   getRole() {
-    return this.role;
+    return "Manager";
   }
 }
 module.exports = Manager;

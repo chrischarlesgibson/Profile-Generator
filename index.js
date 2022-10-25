@@ -105,7 +105,7 @@ function questionDirectory() {
     } else if (chosenRole === "Intern") {
       useInternQuestions();
     } else if (chosenRole === "I'm finished, create my team page") {
-      renderHtml();
+      renderEmployeeCard();
     }
   });
 }
@@ -121,6 +121,7 @@ function useManagerQuestions() {
     );
     teamMembersArray.push(addedManagerObject);
     console.log(teamMembersArray);
+    renderEmployeeCard();
     questionDirectory();
   });
 }
@@ -136,6 +137,7 @@ function useInternQuestions() {
     );
     teamMembersArray.push(addedInternObject);
     console.log(teamMembersArray);
+    renderEmployeeCard();
     questionDirectory();
   });
 }
@@ -151,6 +153,7 @@ function useEngineerQuestions() {
     );
     teamMembersArray.push(addedEngineerObject);
     console.log(teamMembersArray);
+    renderEmployeeCard();
     questionDirectory();
   });
 }
@@ -164,11 +167,13 @@ function useEngineerQuestions() {
 //   );
 // });
 
-
-function renderHtml() {
-    const employeeCards=
-  for (i = 0; i < teamMembersArray.length; i++) {}
-}
+// function renderEmployeeCard() {
+//   teamMembersArray.forEach((employees) => {
+//     for (let key in employees) {
+//       console.log(`${key}: ${employees[key]}`);
+//     }
+//   });
+// }
 
 function init() {
   questionDirectory();
