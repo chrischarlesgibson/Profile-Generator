@@ -1,18 +1,47 @@
 //function to check employees role and direct to correct render html template
 
-const renderEngineerCard = require("./renderEngineer");
+const renderEngineerCard = require("../src/renderEngineer");
+const renderInternCard = require("../src/renderIntern");
+const renderManagerCard = require("../src/renderManager");
 
-function roleCheck(data) {
-  for (i = 0; i < data.length; i++) {
-    if (data[i] === "Engineer") {
-      renderEngineerCard();
-    } else if (data[i] === "Intern") {
-      renderInternCard();
-    } else if (data[i] === "Manager") {
-      renderManagerCard();
-    }
-  }
-}
+// function roleCheck(data) {
+//   for (i = 0; i < data.length; i++) {
+//     if (data[i] === "Engineer") {
+//       renderEngineerCard();
+//     } else if (data[i] === "Intern") {
+//       renderInternCard();
+//     } else if (data[i] === "Manager") {
+//       renderManagerCard();
+//     }
+//   }
+// }
+
+const renderTeamPage = function (data) {
+  renderEngineerCard(Engineer);
+  renderInternCard(Intern);
+  renderManagerCard(Manager);
+  const renderArray = [];
+
+  renderArray.push(
+    data
+      .filter((employee) => employee.getRole() === "Manager")
+      .map((Manager) => renderManagerCard(Manager))
+  );
+  renderArray.push(
+    data
+      .filter((employee) => employee.getRole() === "Engineer")
+      .map((Engineer) => renderEngineerCard(Engineer))
+      .join("")
+  );
+  renderArray.push(
+    data
+      .filter((employee) => employee.getRole() === "Intern")
+      .map((Intern) => renderInternCard(Intern))
+      .join("")
+  );
+
+  return renderArray.join("");
+};
 
 //function to generate the html page
 
@@ -42,9 +71,11 @@ function generateHtml(data) {
           <h1 class="display-4 d-flex justify-content-center">My Team</h1>
         </div>
       </div>
-    ${renderManagerCard(data)}
-    ${renderEngineerCard(data)}
-    ${renderInternCard(data)}
+      <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4">
+        ${renderTeamPage(data)}
+
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

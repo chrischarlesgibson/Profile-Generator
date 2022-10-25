@@ -1,13 +1,11 @@
 const Engineer = require("../classes/Engineer");
 
 function renderEngineerCard(Engineer) {
-  return ` <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-4">
+  return ` 
         <div class="card" style="width: 18rem">
           <div class="card-header">
-            <h1 class="d-flex justify-content-center"> ${Engineer.name}</h1>
-            <h5 class="d-flex justify-content-center">${Engineer.role}</h5>
+            <h1 class="d-flex justify-content-center"> ${Engineer.getName()}</h1>
+            <h5 class="d-flex justify-content-center">${Engineer.getRole()}</h5>
             <span class="material-symbols-outlined d-flex justify-content-center"
               >engineering</span
             >
@@ -15,12 +13,12 @@ function renderEngineerCard(Engineer) {
   
           <div class="card-body">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item border"> ID: ${Engineer.id}</li>
+              <li class="list-group-item border"> ID: ${Engineer.getId()}</li>
               <li class="list-group-item border">Email:
                 <a class="email" href="mailto:
-                  ${Engineer.email}"target="_blank">${Engineer.email}</a>
+                ${Engineer.getEmail()}"target="_blank">${Engineer.getEmail()}</a>
                 </li>
-              <li class="list-group-item border">Github:<a class="github" href="https://github.com/${Engineer.github}" target="_blank"> ${Engineer.github}</a>
+              <li class="list-group-item border">Github:<a class="github" href="https://github.com/${Engineer.getGithub()}" target="_blank"> ${Engineer.getGithub()}</a>
             
               </li>
             </ul>

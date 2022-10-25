@@ -1,24 +1,22 @@
 function renderInternCard(Intern) {
-  return ` <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-4">
+  return ` 
           <div class="card" style="width: 18rem">
             <div class="card-header">
-              <h1 class="d-flex justify-content-center"> ${Intern.name}</h1>
-              <h5 class="d-flex justify-content-center">${Intern.role}</h5>
+              <h1 class="d-flex justify-content-center"> ${Intern.getName()}</h1>
+              <h5 class="d-flex justify-content-center">${Intern.getRole()}</h5>
               
               <span class="material-symbols-outlined d-flex justify-content-center"">school</span>
             </div>
     
             <div class="card-body">
               <ul class="list-group list-group-flush">
-                <li class="list-group-item border">ID: ${Intern.id}</li>
+                <li class="list-group-item border">ID: ${Intern.getId()}</li>
                 <li class="list-group-item border">Email:
                 <a class="email" href="mailto:
-                  ${Intern.email}"target="_blank">${Intern.email}</a>
+                  ${Intern.getEmail()}"target="_blank">${Intern.getEmail()}</a>
                 </li>
                 <li class="list-group-item border">School: 
-                ${Intern.school}
+                ${Intern.getSchool()}
                 </li>
               </ul>
             </div>

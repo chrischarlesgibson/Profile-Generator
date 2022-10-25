@@ -8,6 +8,7 @@ const generateHtml = require("./src/generateHtml");
 const renderEngineer = require("./src/renderEngineer");
 const renderIntern = require("./src/renderIntern");
 const renderManager = require("./src/renderManager");
+const path = require("path");
 //setting empty array to store all the added teammembers
 const teamMembersArray = [];
 
@@ -191,3 +192,17 @@ init();
 
 // // Function call to initialize app
 // init();
+
+// function to generate HTML page file using file system
+function writeFile(fileName, data) {
+  fs.writeFile("../", data, (err) => {
+    if (err) {
+      console.log(err);
+      return;
+    } else {
+      console.log(
+        "It's a success! Your team's profile has been generated! check for teampage.html in you files."
+      );
+    }
+  });
+}
