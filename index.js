@@ -14,17 +14,13 @@ const path = require("path");
 const teamMembersArray = [];
 
 //question array to direct the user to the correct set of employee questions array
+
 const typeOfEmployeeQuestion = [
   {
     type: "list",
     message: "Which type of team member do you want to add?",
     name: "teamMemberType",
-    choices: [
-      "Manager",
-      "Engineer",
-      "Intern",
-      "I'm finished, create my team page",
-    ],
+    choices: ["Engineer", "Intern", "I'm finished, create my team page"],
   },
 ];
 
@@ -101,18 +97,14 @@ const engineerQuestions = [
 //function to direct user to correct set of questions based on which class of employee they choose in the typeOfEmployeeQuestion array
 function questionDirectory() {
   inquirer.prompt(typeOfEmployeeQuestion).then(function (response) {
-    console.log(response);
     let chosenRole = response.teamMemberType;
     if (chosenRole === "Engineer") {
       useEngineerQuestions();
-    } else if (chosenRole === "Manager") {
-      useManagerQuestions();
     } else if (chosenRole === "Intern") {
       useInternQuestions();
     } else if (chosenRole === "I'm finished, create my team page") {
       //   let storedUserInput = JSON.stringify(teamMembersArray);
       writeToFile("teamPage.html", generateHtml(teamMembersArray));
-      console.log(teamMembersArray);
     }
   });
 }
@@ -127,9 +119,7 @@ function useManagerQuestions() {
       response.office
     );
     teamMembersArray.push(addedManagerObject);
-    console.log(teamMembersArray);
     questionDirectory();
-    console.log(teamMembersArray);
   });
 }
 
@@ -143,9 +133,8 @@ function useInternQuestions() {
       response.school
     );
     teamMembersArray.push(addedInternObject);
-    console.log(teamMembersArray);
+
     questionDirectory();
-    console.log(teamMembersArray);
   });
 }
 
@@ -159,14 +148,12 @@ function useEngineerQuestions() {
       response.github
     );
     teamMembersArray.push(addedEngineerObject);
-    console.log(teamMembersArray);
+
     questionDirectory();
-    console.log(teamMembersArray);
   });
 }
 
 function writeToFile(fileName, data) {
-  console.log(data);
   fs.writeFile(fileName, data, (err) =>
     err
       ? console.error(err)
@@ -177,7 +164,7 @@ function writeToFile(fileName, data) {
 }
 
 function init() {
-  questionDirectory();
+  useManagerQuestions();
 }
 
 init();
