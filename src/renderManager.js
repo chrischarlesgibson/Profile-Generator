@@ -2,8 +2,8 @@ function renderManagerCard(Manager) {
   return ` 
                 <div class="card" style="width: 18rem">
                   <div class="card-header">
-                    <h1 class="d-flex justify-content-center"> ${Manager.getName()}</h1>
-                    <h5 class="d-flex justify-content-center">${Manager.getRole()}</h5>
+                    <h1 class="d-flex justify-content-center"> ${Manager.name}</h1>
+                    <h5 class="d-flex justify-content-center">${Manager.role}</h5>
                     <span class="<span class="material-symbols-outlined">
                     coffee
                     </span> d-flex justify-content-center"
@@ -13,13 +13,13 @@ function renderManagerCard(Manager) {
           
                   <div class="card-body">
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item border">ID: ${Manager.getId()}</li>
+                      <li class="list-group-item border">ID: ${Manager.id}</li>
                       <li class="list-group-item border">Email:
                       <a class="email" href="mailto:
-                        ${Manager.getEmail()}"target="_blank">${Manager.getEmail()}</a>
+                        ${Manager.email}"target="_blank">${Manager.email}</a>
                       </li>
                       <li class="list-group-item border">Office: 
-                      ${Manager.getOffice()}
+                      ${Manager.office}
                       </li>
                     </ul>
                   </div>

@@ -110,8 +110,8 @@ function questionDirectory() {
     } else if (chosenRole === "Intern") {
       useInternQuestions();
     } else if (chosenRole === "I'm finished, create my team page") {
+      writeToFile("teamPage.html", generateHtml(teamMembersArray));
       console.log(teamMembersArray);
-      generateHtml();
     }
   });
 }
@@ -177,10 +177,6 @@ function writeToFile(fileName, data) {
 
 function init() {
   questionDirectory();
-
-  let storedUserInput = generateHtml(teamMembersArray);
-  writeToFile("teamPage.html", JSON.stringify(storedUserInput));
-  console.log(response);
 }
 
 init();

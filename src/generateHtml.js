@@ -17,36 +17,38 @@ const renderManagerCard = require("../src/renderManager");
 // }
 
 const renderTeamPage = function (data) {
-  console.log(data);
-  renderEngineerCard(data);
-  renderInternCard(data);
-  renderManagerCard(data);
   const renderArray = [];
 
-  renderArray.push(
-    data
-      .filter((employee) => employee.getRole() === "Manager")
-      .map((Manager) => renderManagerCard(Manager))
-  );
-  renderArray.push(
-    data
-      .filter((employee) => employee.getRole() === "Engineer")
-      .map((Engineer) => renderEngineerCard(Engineer))
-      .join("")
-  );
-  renderArray.push(
-    data
-      .filter((employee) => employee.getRole() === "Intern")
-      .map((Intern) => renderInternCard(Intern))
-      .join("")
-  );
+  for (let i = 0; i < data.length; i++) {
+    const employee = data[i];
+    const role = employee.getRole();
 
-  return renderArray.join("");
+    if (role === "Manager") {
+      const managerCard = renderManagerCard(employee);
+
+      renderArray.push(managerCard);
+    }
+
+    if (role === "Engineer") {
+      const engineerCard = renderEngineerCard(employee);
+
+      renderArray.push(engineerCard);
+    }
+
+    if (role === "Intern") {
+      const internCard = renderInternCard(employee);
+
+      renderArray.push(internCard);
+    }
+  }
+
+  const allTeamCardsString = renderArray.join("");
+  const makeTeamPage = generateHtml(allTeamCardsString);
+  return makeTeamPage;
 };
-
 //function to generate the html page
 
-function generateHtml(data) {
+function generateHtml(allTeamCardsString) {
   return `<!DOCTYPE html>
   <html lang="en">
     <head>
@@ -75,7 +77,7 @@ function generateHtml(data) {
       <div class="container">
       <div class="row">
         <div class="col-12 col-md-4">
-        ${renderTeamPage(data)}
+        ${allTeamCardsString}
 
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
