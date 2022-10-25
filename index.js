@@ -1,20 +1,14 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const jest = require("jest");
 const Intern = require("./classes/Intern");
 const Engineer = require("./classes/Engineer");
 const Manager = require("./classes/Manager");
 const generateHtml = require("./src/generateHtml");
-const Employee = require("./classes/Employee");
-const renderEngineer = require("./src/renderEngineer");
-const renderIntern = require("./src/renderIntern");
-const renderManager = require("./src/renderManager");
-const path = require("path");
+
 //setting empty array to store all the added teammembers
 const teamMembersArray = [];
 
 //question array to direct the user to the correct set of employee questions array
-
 const typeOfEmployeeQuestion = [
   {
     type: "list",
@@ -24,7 +18,7 @@ const typeOfEmployeeQuestion = [
   },
 ];
 
-// question array to be asked if users selects that they what to input manager info
+// first question array that is asked when theuser starts the application, is asked only once
 const managerQuestions = [
   {
     type: "input",
@@ -103,13 +97,12 @@ function questionDirectory() {
     } else if (chosenRole === "Intern") {
       useInternQuestions();
     } else if (chosenRole === "I'm finished, create my team page") {
-      //   let storedUserInput = JSON.stringify(teamMembersArray);
       writeToFile("teamPage.html", generateHtml(teamMembersArray));
     }
   });
 }
 
-//function to prompt user with questions realted to adding  a new manager and then storing the users input into the addmanagersobject and push that new manager into the team members array
+//function to prompt user with questions related to adding  a new manager and then storing the users input into the addmanagersobject and push that new manager into the team members array
 function useManagerQuestions() {
   inquirer.prompt(managerQuestions).then(function (response) {
     const addedManagerObject = new Manager(
@@ -133,12 +126,11 @@ function useInternQuestions() {
       response.school
     );
     teamMembersArray.push(addedInternObject);
-
     questionDirectory();
   });
 }
 
-//function to prompt user with questions realted to adding  a new engineer and then storing the users input into the addengineerobject and push that new engineer into the team members array
+//function to prompt user with questions related to adding  a new engineer and then storing the users input into the addengineerobject and push that new engineer into the team members array
 function useEngineerQuestions() {
   inquirer.prompt(engineerQuestions).then(function (response) {
     const addedEngineerObject = new Engineer(
@@ -153,6 +145,7 @@ function useEngineerQuestions() {
   });
 }
 
+//function to write file and show error or success
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) =>
     err
@@ -163,8 +156,10 @@ function writeToFile(fileName, data) {
   );
 }
 
+//function to initialize the application when the user types in node index.js in command line
 function init() {
   useManagerQuestions();
 }
 
+//calling init function
 init();

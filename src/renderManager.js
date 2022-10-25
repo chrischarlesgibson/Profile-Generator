@@ -1,3 +1,5 @@
+//function to render the managers card using html template and inputted user info
+
 function renderManagerCard(Manager) {
   return ` 
                 <div class="card" style="width: 18rem">

@@ -1,3 +1,5 @@
+//function to render the interns card using html template and inputted user info
+
 function renderInternCard(Intern) {
   return ` 
           <div class="card" style="width: 18rem">

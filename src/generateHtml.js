@@ -1,21 +1,8 @@
-//function to check employees role and direct to correct render html template
-
 const renderEngineerCard = require("../src/renderEngineer");
 const renderInternCard = require("../src/renderIntern");
 const renderManagerCard = require("../src/renderManager");
 
-// function roleCheck(data) {
-//   for (i = 0; i < data.length; i++) {
-//     if (data[i] === "Engineer") {
-//       renderEngineerCard();
-//     } else if (data[i] === "Intern") {
-//       renderInternCard();
-//     } else if (data[i] === "Manager") {
-//       renderManagerCard();
-//     }
-//   }
-// }
-
+//function that takes in teammmembersarray and loops through it to check the roles of each object and then pushes the render employee.js template functino into the renderarray array with that objects inputted user info. so its like a directory that lets us know what render employee.js template to use and then put the users info into it and then push it into the renderArray array. and at end of function we join the renderarray in a string so we can pass it into generate html function
 const renderTeamPage = function (data) {
   const renderArray = [];
 
@@ -44,10 +31,9 @@ const renderTeamPage = function (data) {
 
   const allTeamCardsString = renderArray.join("");
   return allTeamCardsString;
-  //   const makeTeamPage = generateHtml(allTeamCardsString);
-  //   return makeTeamPage;
 };
-//function to generate the html page
+
+//function to generate the entire html teampage
 
 function generateHtml(allTeamCardsString) {
   return `<!DOCTYPE html>

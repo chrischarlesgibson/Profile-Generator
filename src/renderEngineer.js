@@ -1,4 +1,4 @@
-const Engineer = require("../classes/Engineer");
+//function to render the engineers card using html template and inputted user info
 
 function renderEngineerCard(Engineer) {
   return ` 

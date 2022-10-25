@@ -16,7 +16,7 @@ describe("Engineer", function () {
   });
 });
 
-//test to check if the github username works properly
+//test to check if the github username function works properly
 describe("test of getgithub funtion", function () {
   it("getGithub should return the inputted username", function () {
     let github = "chrischarlesgibson";
