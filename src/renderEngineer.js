@@ -1,6 +1,6 @@
 const Engineer = require("../classes/Engineer");
 
-function renderEngineerCard() {
+function renderEngineerCard(Engineer) {
   return ` <div class="container">
     <div class="row">
       <div class="col-12 col-md-4">
@@ -8,8 +8,8 @@ function renderEngineerCard() {
           <div class="card-header">
             <h1 class="d-flex justify-content-center"> ${Engineer.name}</h1>
             <h5 class="d-flex justify-content-center">${Engineer.role}</h5>
-            <span class="material-icons d-flex justify-content-center"
-              >face</span
+            <span class="material-symbols-outlined d-flex justify-content-center"
+              >engineering</span
             >
           </div>
   
@@ -31,4 +31,4 @@ function renderEngineerCard() {
   </div>`;
 }
 
-module.exports = renderEngineerCard();
+module.exports = renderEngineerCard;

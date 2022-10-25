@@ -1,4 +1,4 @@
-function renderInternCard() {
+function renderInternCard(Intern) {
   return ` <div class="container">
       <div class="row">
         <div class="col-12 col-md-4">
@@ -6,9 +6,8 @@ function renderInternCard() {
             <div class="card-header">
               <h1 class="d-flex justify-content-center"> ${Intern.name}</h1>
               <h5 class="d-flex justify-content-center">${Intern.role}</h5>
-              <span class="material-icons d-flex justify-content-center"
-                >face</span
-              >
+              
+              <span class="material-symbols-outlined d-flex justify-content-center"">school</span>
             </div>
     
             <div class="card-body">
@@ -29,4 +28,4 @@ function renderInternCard() {
     </div>`;
 }
 
-module.exports = renderInternCard();
+module.exports = renderInternCard;

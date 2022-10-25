@@ -1,4 +1,4 @@
-function renderManagerCard() {
+function renderManagerCard(Manager) {
   return ` <div class="container">
             <div class="row">
               <div class="col-12 col-md-4">
@@ -6,8 +6,10 @@ function renderManagerCard() {
                   <div class="card-header">
                     <h1 class="d-flex justify-content-center"> ${Manager.name}</h1>
                     <h5 class="d-flex justify-content-center">${Manager.role}</h5>
-                    <span class="material-icons d-flex justify-content-center"
-                      >face</span
+                    <span class="<span class="material-symbols-outlined">
+                    coffee
+                    </span> d-flex justify-content-center"
+                      >coffee</span
                     >
                   </div>
           
@@ -29,4 +31,4 @@ function renderManagerCard() {
           </div>`;
 }
 
-module.exports = renderManagerCard();
+module.exports = renderManagerCard;
