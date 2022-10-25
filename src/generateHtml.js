@@ -43,8 +43,9 @@ const renderTeamPage = function (data) {
   }
 
   const allTeamCardsString = renderArray.join("");
-  const makeTeamPage = generateHtml(allTeamCardsString);
-  return makeTeamPage;
+  return allTeamCardsString;
+  //   const makeTeamPage = generateHtml(allTeamCardsString);
+  //   return makeTeamPage;
 };
 //function to generate the html page
 
@@ -77,7 +78,7 @@ function generateHtml(allTeamCardsString) {
       <div class="container">
       <div class="row">
         <div class="col-12 col-md-4">
-        ${allTeamCardsString}
+        ${renderTeamPage(allTeamCardsString)}
 
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

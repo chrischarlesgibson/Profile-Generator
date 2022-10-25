@@ -6,7 +6,7 @@ function renderManagerCard(Manager) {
                     <h5 class="d-flex justify-content-center">${Manager.role}</h5>
                     <span class="<span class="material-symbols-outlined">
                     coffee
-                    </span> d-flex justify-content-center"
+                    </span class= "d-flex justify-content-center"
                       >coffee</span
                     >
                   </div>

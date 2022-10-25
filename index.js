@@ -110,6 +110,7 @@ function questionDirectory() {
     } else if (chosenRole === "Intern") {
       useInternQuestions();
     } else if (chosenRole === "I'm finished, create my team page") {
+      //   let storedUserInput = JSON.stringify(teamMembersArray);
       writeToFile("teamPage.html", generateHtml(teamMembersArray));
       console.log(teamMembersArray);
     }
