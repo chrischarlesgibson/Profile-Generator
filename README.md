@@ -24,7 +24,7 @@ Node.js, Inquirer are required to use this tool. If you dont have either of thos
 
 First go to the command line in the folder that holds your index.js file. Next, type "node index.js" and click enter. you will be asked to enter the manager's info first and after adding the manager you will be asked if you want to add intern(s) and/or engineer(s) to your team page. Once you have added all the egineers and interns that you have on your team, select the "I'm finished, create my team page" option in the command line. A message saying "It's a success! Your team's profile has been generated! check for teamPage.html in you files." will pop up. Your teamPage.html file will have be generated.
 
-[click this video link for a demo README-Writer in action!](https://youtu.be/o1SpxDWF_50)
+[click this video link for a demo of Teamified in action!](https://youtu.be/o1SpxDWF_50)
 
 ![Teamified photo](./Assets/teamified%20photo.png)
 
