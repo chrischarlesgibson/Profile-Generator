@@ -1,189 +1,58 @@
-# 10 Object-Oriented Programming: Team Profile Generator
+# README-Writer
 
-## Your Task
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-Your task is to build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. Testing is key to making code maintainable, so you’ll also write a unit test for every part of your code and ensure that it passes each test.
+## Description
 
-Because this application won’t be deployed, you’ll need to provide a link to a walkthrough video that demonstrates its functionality and all of the tests passing. You’ll need to submit a link to the video AND add it to the readme of your project.
+Teamified is a command line application that helps users create html pages for their team. The html it creates will contain contact info about your team members. Teamified uses node.js and Inquirer to allow users to input their project data and receive an high quality auto-generated html file, all in the command line!
 
-> **Note**: There is no starter code for this assignment.
+## Table of Contents
 
-## User Story
+- [Description](#Description)
+- [installation](#Installation)
+- [usage](#Usage)
+- [Contributing guidlines](#Contributing)
+- [license](#License)
+- [badges](#Badges)
+- [Questions](#Questions)
 
-```md
-AS A manager
-I WANT to generate a webpage that displays my team's basic info
-SO THAT I have quick access to their emails and GitHub profiles
-```
+## Installation
 
-## Acceptance Criteria
+Node.js, Inquirer are required to use this tool. If you dont have either of those two, you will have to install them first. Jest was also used, but for testing purposes while the tool was in development, however you dont need Jest.
 
-```md
-GIVEN a command-line application that accepts user input
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated
-```
+## Usage
 
-## Mock-Up
+First go to the command line in the folder that holds your index.js file. Next, type "node index.js" and click enter. you will be asked to enter the manager's info first and after adding the manager you will be asked if you want to add ann intern(s) and/or engineer(s) to your team page. Once you have added all the egineers and interns that you have on your team, select the "I'm finished, create my team page" option in the command line. A message saying "It's a success! Your team's profile has been generated! check for teamPage.html in you files." will pop up. Your teamPage.html file will have be generated.
 
-The following image shows a mock-up of the generated HTML’s appearance and functionality:
+[click this video link for a demo README-Writer in action!](https://drive.google.com/file/d/1NXxMrAcg85AcEvhSGB_JVun_cXBfyblA/view)
 
-![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/10-object-oriented-programming-challenge-demo.png)
+## License
 
-The styling in the image is just an example, so feel free to add your own.
+Licenseed under the MIT license.[License details here](https://opensource.org/licenses/MIT)
 
-## Getting Started
+## Built With:
 
-This Challenge will combine many of the skills we've covered so far. In addition to the User Story and Acceptance Criteria, we’ve provided some guidelines to help get started.
+- Javascript
+- node.js
+- Inquirer
+- Jest
 
-Because this Challenge will require a video submission, refer to the [Fullstack Blog Video Submission Guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) for additional guidance on creating a video.
+## Badges
 
-Your application should use [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer/v/8.2.4) for collecting input from the user. The application will be invoked by using the following command:
+![Your Repository's languages](https://github-readme-stats.vercel.app/api/top-langs/?username=chrischarlesgibson&theme=blue-green)
 
-```bash
-node index.js
-```
+## Contributing Guidlines
 
-It is recommended that you start with a directory structure that looks like the following example:
+If you would like to contribute to this tool, please contact me and we can discuss further.
 
-```md
-.
-├── __tests__/             //jest tests
-│   ├── Employee.test.js
-│   ├── Engineer.test.js
-│   ├── Intern.test.js
-│   └── Manager.test.js
-├── dist/                  // rendered output (HTML) and CSS style sheet      
-├── lib/                   // classes
-├── src/                   // template helper code 
-├── .gitignore             // indicates which folders and files Git should ignore
-├── index.js               // runs the application
-└── package.json           
-```
+## Creator info
 
-**Important**: Make sure that you remove `dist` from the `.gitignore` file so that Git will track this folder and include it when you push up to your application's repository.
+**Chris Gibson**
 
-The application must include `Employee`, `Manager`, `Engineer`, and `Intern` classes. The tests for these classes (in the `_tests_` directory) must ALL pass.
+- [Link to Chris's Portfolio Site](https://chrischarlesgibson.github.io/Chris-Gibson-project-portfolio/)
+- [Link to Chris's Github](https://github.com/chrischarlesgibson)
+- [Link to Chris's LinkedIn](https://www.linkedin.com/in/chris-gibson-415909250/)
 
-The first class is an `Employee` parent class with the following properties and methods:
+## Questions
 
-* `name`
-
-* `id`
-
-* `email`
-
-* `getName()`
-
-* `getId()`
-
-* `getEmail()`
-
-* `getRole()`&mdash;returns `'Employee'`
-
-The other three classes will extend `Employee`.
-
-In addition to `Employee`'s properties and methods, `Manager` will also have the following:
-
-* `officeNumber`
-
-* `getRole()`&mdash;overridden to return `'Manager'`
-
-In addition to `Employee`'s properties and methods, `Engineer` will also have the following:
-
-* `github`&mdash;GitHub username
-
-* `getGithub()`
-
-* `getRole()`&mdash;overridden to return `'Engineer'`
-
-In addition to `Employee`'s properties and methods, `Intern` will also have the following:
-
-* `school`
-
-* `getSchool()`
-
-* `getRole()`&mdash;overridden to return `'Intern'`
-
-Finally, although it’s not a requirement, consider adding validation to ensure that user input is in the proper format.
-
-## Grading Requirements
-
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-
-This Challenge is graded based on the following criteria:
-
-### Deliverables: 15%
-
-* A sample HTML file generated using the application must be submitted.
-
-* Your GitHub repository containing your application code.
-
-### Walkthrough Video: 32%
-
-* A walkthrough video that demonstrates the functionality of the Team Profile Generator and passing tests must be submitted, and a link to the video should be included in your README file.
-
-* The walkthrough video must show all four tests passing from the command line.
-
-* The walkthrough video must demonstrate how a user would invoke the application from the command line.
-
-* The walkthrough video must demonstrate how a user would enter responses to all of the prompts in the application.
-
-* The walkthrough video must demonstrate a generated HTML file that matches the user input.
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-  * Uses the [Inquirer package](https://www.npmjs.com/package/inquirer/v/8.2.4).
-
-  * Uses the [Jest package](https://www.npmjs.com/package/jest) for a suite of unit tests.
-
-  * The application must have `Employee`, `Manager`, `Engineer`, and `Intern` classes.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains a high-quality readme with description and a link to a walkthrough video.
-
-## Review
-
-You are required to submit the following for review:
-
-* A walkthrough video that demonstrates the functionality of the application and passing tests.
-
-* A sample HTML file generated using your application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+If you are experiencing any issues, you can contact me at my github account [chrischarlesgibson](https://github.com/chrischarlesgibson) or contact me through email at chrischarlesgibson@gmail.com

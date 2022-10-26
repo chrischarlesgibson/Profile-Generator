@@ -22,10 +22,8 @@ function renderInternCard(Intern) {
                 </li>
               </ul>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>`;
+            </div>
+          `;
 }
 
 module.exports = renderInternCard;

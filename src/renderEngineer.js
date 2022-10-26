@@ -2,7 +2,7 @@
 
 function renderEngineerCard(Engineer) {
   return ` 
-        <div class="card" style="width: 18rem;margin: 25px; box-shadow: 7px 1px 13px 2px rgba(0, 0, 0, 0.58)>
+        <div class="card" style="width: 18rem;margin: 25px; box-shadow: 7px 1px 13px 2px rgba(0, 0, 0, 0.58)">
           <div class="card-header text-white bg-primary">
             <h1 class="d-flex justify-content-center"> ${Engineer.name}</h1>
             <h5 class="d-flex justify-content-center">Engineer</h5>
@@ -22,10 +22,8 @@ function renderEngineerCard(Engineer) {
               </li>
             </ul>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>`;
+          </div>
+    `;
 }
 
 module.exports = renderEngineerCard;

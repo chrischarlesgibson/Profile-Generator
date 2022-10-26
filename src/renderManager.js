@@ -21,10 +21,8 @@ function renderManagerCard(Manager) {
                       </li>
                     </ul>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>`;
+                  </div>
+                `;
 }
 
 module.exports = renderManagerCard;

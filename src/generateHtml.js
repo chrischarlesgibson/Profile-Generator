@@ -66,6 +66,9 @@ function generateHtml(allTeamCardsString) {
         <div class="d-flex flex-row flex-wrap justify-content-center">
         ${renderTeamPage(allTeamCardsString)}
 
+        </div>
+        </div>
+      </div>
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
